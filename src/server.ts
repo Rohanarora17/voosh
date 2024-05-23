@@ -19,7 +19,9 @@ app.use(passport.session());
 app.use("/api/users", userRoutes);
 app.use("/auth", authRoutes);
 
-
+app.get("/", (req: express.Request, res: express.Response) => {
+  res.send("Welcome to the Voosh Assignment");
+});
 mongoose
   .connect(process.env.MONGO_URI!)
   .then(() => {
